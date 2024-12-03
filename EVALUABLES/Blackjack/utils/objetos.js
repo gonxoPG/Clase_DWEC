@@ -4,7 +4,7 @@ class carta {
     imagen;
 
     constructor(representacion) {
-        this.imagen = `./${representacion}.png`;
+        this.imagen = `images/${representacion}.png`;
         this.valor = representacion.substring(0, representacion.length -1);
 
         if (this.valor == "J" || this.valor == "Q" || this.valor == "K") {
