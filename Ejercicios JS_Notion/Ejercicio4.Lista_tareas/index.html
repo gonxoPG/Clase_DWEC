@@ -23,19 +23,19 @@
             <div class="row m-4">
                 <div class="col-8">
                     <h2>Listado</h2>
-                    <ul class="list-group">
-                        <li class="list-group-item">Ejemplo vacío</li>
+                    <ul class="list-group" id="listado">
+                        <!-- modificación del DOM -->
                     </ul>
                 </div>
 
                 <div class="col">
                     <h2>Acciones</h2>
-                    <button type="button" class="btn btn-success">Añadir</button>
-                    <button type="button" class="btn btn-danger">Eliminar</button>
+                    <button type="button" class="btn btn-success" id="btn-add">Añadir</button>
+                    <button type="button" class="btn btn-danger" id="btn-del">Eliminar</button>
 
                     <div class="input-group mb-3">
                         <!-- <span class="input-group-text" id="basic-addon1">@</span> -->
-                        <input type="text" class="form-control mt-4" placeholder="Tarea..." aria-label="Username" aria-describedby="basic-addon1">
+                        <input type="text" class="form-control mt-4" id="in-task" placeholder="Tarea..." aria-label="Username" aria-describedby="basic-addon1">
                       </div>
                 </div>
             </div>
