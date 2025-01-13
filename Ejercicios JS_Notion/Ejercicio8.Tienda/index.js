@@ -1,0 +1,1 @@
+// Crea un simulador de una tienda online que obtiene información sobre productos de una API pública y permite a los usuarios agregar productos al carrito.
