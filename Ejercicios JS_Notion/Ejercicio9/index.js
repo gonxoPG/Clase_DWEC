@@ -14,7 +14,7 @@ async function obtenerPreguntas() {
         console.log("Éxito en la conexión");
         
         json.results.forEach((element, index) => {
-            let respuestas = [element.incorrect_answers, element.correct_answer];
+            let respuestas = _.shuffle([...element.incorrect_answers, element.correct_answer]);
 
             pregunta = new Pregunta(`${index+1}`, element.question, respuestas, element.correct_answer);
             arrayPreguntas.push(pregunta);
