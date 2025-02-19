@@ -151,36 +151,6 @@ btnFiltrar.addEventListener("click", () => {
 
 })
 
-/* divCartas.addEventListener("click", (event) => {
-
-    
-
-    if (event.target.classList.contains("btn-addcar")) {
-        let productoID = event.target.getAttribute("data-id");
-        let seleccionado = listaProductos.find(item => item.id == productoID);
-
-        if (seleccionado) {
-            carrito.push(seleccionado);
-            actualizarCarrito();
-
-            Swal.fire({
-                position: "top-end",
-                icon: "success",
-                title: "¡Producto añadido correctamente!",
-                showConfirmButton: false,
-                timer: 1500
-            });
-        } else {
-            Swal.fire({
-                position: "top-end",
-                icon: "error",
-                title: "Ha ocurrido un problema",
-                showConfirmButton: false,
-                timer: 1500
-            });
-        }
-    }
-}) */
 
 function agregarEventosBotones() {
     let botonesAddCarrito = document.querySelectorAll("#btn-addcar");
@@ -250,7 +220,7 @@ botonComprar.addEventListener("click", (e) => {
     
     Swal.fire({
         title: "¿Estás seguro?",
-        html: `Vas a realizar una compra por valor de <b>${acumulado} €</b>`,
+        html: `Vas a realizar una compra por valor de <b>${acumulado.toFixed(2)} €</b>`,
         icon: "warning",
         showCancelButton: true,
         confirmButtonColor: "#3085d6",
