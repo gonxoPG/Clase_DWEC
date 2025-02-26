@@ -1,0 +1,56 @@
+<h1>Conocimientos de {{nombre}}</h1>
+<!-- esta variable viene de listado.component.ts no puedo cogerla del app.component.ts -->
+
+<!-- cuando queremos llevar un dato a un atributo -->
+
+<!-- binding de atributo -->
+<img [src]="url" style="width: 100px; height: auto;" />
+
+<button class="btn btn-primary" (click)="mostrarConocimientos()">Mostrar conocimientos</button>
+
+<ng-container *ngIf="mostrar; else elseTemplate">
+    <div class="row mt-4"> <!-- *ngIf="mostrar" variable creada en .ts que se modifica en el método-->
+        <div class="col">
+            <h2>Formulario</h2>
+            <input class="form-control mb-3" placeholder="Introduce conocimiento" [(ngModel)]="nombreConocimiento" />
+            <!-- directiva estructural -->
+    
+            <select class="form-select mb-3" [(ngModel)]="nivelConocimiento">
+                <option value="1">Bajo</option>
+                <option value="2">Medio</option>
+                <option value="3">Ato</option>
+            </select>
+            <button class="btn btn-primary" (click)="guardarElemento()">Guardar</button>
+        </div> <!-- con ngModel ya no hacen falta parámetros -->
+        <div class="col">
+            <h2>Listado de Conocimientos</h2>
+            <!-- <ul class="list-group">
+                // tantos li como conocimiento haya en el array
+                 <li class="list-group-item" *ngFor="let item of conocimientos">{{item.nombre}} | {{item.nivel}}</li>
+            </ul> -->
+    
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col" *ngFor="let item of conocimientos"> <!-- bucle para crear una columna por cada conocimiento -->
+                    <div class="card">
+                        <img src="https://cdn.pixabay.com/photo/2018/05/18/15/30/web-design-3411373_1280.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">{{item.nombre}}</h5>
+                            <p class="card-text">{{item.nivel}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>
+
+<ng-template #elseTemplate>
+    <div class="alert alert-warning" role="alert">
+        No se muestra nada...
+      </div>
+
+</ng-template>
+
+<!-- <div class="alert-warning" role="alert" *ngIf="conocimientos.length == 0">
+    No hay conocimientos en el sistema
+</div> -->

@@ -1,0 +1,36 @@
+<!-- Bootstrap importado desde dependencias en angular.json build > styles / scripts -->
+
+<div class="container">
+  <p>Esta es la primera página realizada por {{title}} para la asignatura {{asignatura}}</p>
+  <!-- estoy llamando a la variable del .ts -->
+
+  <!-- <button type="button" class="btn btn-primary">Primary</button>
+    <button type="button" class="btn btn-secondary">Secondary</button>
+    <button type="button" class="btn btn-success">Success</button>
+    <button type="button" class="btn btn-danger">Danger</button>
+    <button type="button" class="btn btn-warning">Warning</button>
+    <button type="button" class="btn btn-info">Info</button>
+    <button type="button" class="btn btn-light">Light</button>
+    <button type="button" class="btn btn-dark">Dark</button>
+    
+    <button type="button" class="btn btn-link">Link</button>
+
+    <p>Esto era un prueba de funcionamiento de Bootstrap</p> -->
+
+  <p>Selecciona que componente quieres ver;</p>
+
+  <select class="form-select" [(ngModel)]="seleccion">
+    <option value="1">Conocimientos</option>
+    <option value="2">Asignatura</option>
+    <option value="3">Tecnología</option>
+  </select>
+
+  <div [ngSwitch]="seleccion"> <!-- Ojo con el valor guardado, es un string y por eso la doble comilla -->
+    <app-listado *ngSwitchCase="'1'"></app-listado> <!-- creamos aquí el nodo, no en la general -->
+    <app-asignaturas *ngSwitchCase="'2'"></app-asignaturas>
+    <app-tecnologias *ngSwitchCase="'3'"></app-tecnologias>
+
+    <p *ngSwitchDefault>Debe seleccionar una opción</p>
+  </div>
+
+</div>
