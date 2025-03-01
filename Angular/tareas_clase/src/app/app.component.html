@@ -1,10 +1,10 @@
 <!-- Bootstrap importado desde dependencias en angular.json build > styles / scripts -->
 
-<div class="container">
+<!-- <div class="container">
   <p>Esta es la primera página realizada por {{title}} para la asignatura {{asignatura}}</p>
-  <!-- estoy llamando a la variable del .ts -->
+  // estoy llamando a la variable del .ts
 
-  <!-- <button type="button" class="btn btn-primary">Primary</button>
+  <button type="button" class="btn btn-primary">Primary</button>
     <button type="button" class="btn btn-secondary">Secondary</button>
     <button type="button" class="btn btn-success">Success</button>
     <button type="button" class="btn btn-danger">Danger</button>
@@ -15,7 +15,7 @@
     
     <button type="button" class="btn btn-link">Link</button>
 
-    <p>Esto era un prueba de funcionamiento de Bootstrap</p> -->
+    <p>Esto era un prueba de funcionamiento de Bootstrap</p>
 
   <p>Selecciona que componente quieres ver;</p>
 
@@ -25,12 +25,40 @@
     <option value="3">Tecnología</option>
   </select>
 
-  <div [ngSwitch]="seleccion"> <!-- Ojo con el valor guardado, es un string y por eso la doble comilla -->
-    <app-listado *ngSwitchCase="'1'"></app-listado> <!-- creamos aquí el nodo, no en la general -->
+  <div [ngSwitch]="seleccion"> // Ojo con el valor guardado, es un string y por eso la doble comilla
+    <app-listado *ngSwitchCase="'1'"></app-listado> // creamos aquí el nodo, no en la general
     <app-asignaturas *ngSwitchCase="'2'"></app-asignaturas>
     <app-tecnologias *ngSwitchCase="'3'"></app-tecnologias>
 
     <p *ngSwitchDefault>Debe seleccionar una opción</p>
   </div>
 
+</div> -->
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/asignaturas">Asignaturas</a> <!-- la barra cruzada indica que es una ruta padre -->
+                                <!-- [routerLink]=["/asignaturas", 5] este para cuando quiera pasar parámetros -->
+                                <!-- [routerLink]=["/asignaturas", seleccion] -->
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/tecnologias">Tecnologías</a>
+        </li><li class="nav-item">
+          <a class="nav-link" (click)="navegar()">Listado</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <router-outlet></router-outlet>
 </div>
