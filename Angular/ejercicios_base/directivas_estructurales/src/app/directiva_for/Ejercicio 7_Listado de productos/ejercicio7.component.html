@@ -1,0 +1,45 @@
+<div class="container">
+    <h3 class="mb-3">Ejercicio 7</h3>
+
+    <form #formulario="ngForm" (ngSubmit)="guardarProducto()">
+        <div class="mb-3">
+            <label for="inputNombreP" class="form-label">Nombre del producto:</label>
+            <input type="text" class="form-control" id="inputNombreP" name="inputNombreP" [(ngModel)]="nombre">
+        </div>
+        <div class="mb-3">
+            <label for="inputPrecio" class="form-label">Precio:</label>
+            <input type="number" class="form-control" id="inputPrecio" name="inputPrecio" [(ngModel)]="precio">
+        </div>
+        <div class="mb-3">
+            <label for="inputTipo" class="form-label">Tipo de producto:</label>
+            <input type="text" class="form-control" id="inputTipo" name="inputTipo" [(ngModel)]="tipo">
+        </div>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+    </form>
+
+    <div class="container mt-3">
+        @for (item of productos; track $index) {
+
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">{{item.nombre}}</h5>
+                <p class="card-text">{{item.precio}} €</p>
+            </div>
+            <div class="card-footer text-body-secondary">
+                {{item.tipo}}
+            </div>
+        </div>
+        }
+
+    </div>
+
+    <!-- <h3>Lista de productos</h3>
+        <ul>
+        <li *ngFor="let producto of productos">
+            {{ producto.nombre }} - {{ producto.precio }}€ - {{ producto.tipo }}
+        </li>
+        </ul>
+        -->
+
+</div>
+<hr class="my-4">

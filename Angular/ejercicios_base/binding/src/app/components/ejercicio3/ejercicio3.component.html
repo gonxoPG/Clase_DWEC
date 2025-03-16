@@ -1,0 +1,27 @@
+<hr class="my-5">
+
+<div class="container">
+    <h2>Selecciona una opción</h2>
+    <select class="form-select" [(ngModel)]="opcionSeleccionada" (change)="cambioOpcion()">
+        <option value="" disabled selected>Open this select menu</option>
+        <option value="1">Opción uno</option>
+        <option value="2">Opción dos</option>
+        <option value="3">Opción tres</option>
+    </select>
+
+    <div class="container my-3">
+        @switch (opcionSeleccionada) {
+        @case ("1") {
+        <p>Opción UNO</p>
+        } @case ("2") {
+        <P>Opción DOS</P>
+        } @case ("3") {
+        <p>Opción TRES</p>
+        } @default {
+        <p>Selecciona una opción</p>
+        }
+        }
+    </div>
+
+
+</div>

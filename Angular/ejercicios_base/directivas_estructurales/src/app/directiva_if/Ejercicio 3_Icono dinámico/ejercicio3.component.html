@@ -1,0 +1,25 @@
+<div class="container">
+    <h3 class="mb-3">Ejercicio 3</h3>
+    <select class="form-select mb-3" [(ngModel)]="rol">
+        <option value="" disabled selected>Elige tu rol</option>
+        <option value="1">Administrador</option>
+        <option value="2">Usuario</option>
+        <option value="3">Invitado</option>
+    </select>
+
+    <div *ngIf="rol == '1'">
+        <h4>Administrador</h4>
+        <p>Acceso total a todas las opciones</p>
+    </div>
+    <div *ngIf="rol == '2'">
+        <h4>Usuario</h4>
+        <p>Acceso limitado a algunas opciones</p>
+    </div>
+    <div *ngIf="rol == '3'">
+        <h4>Invitado</h4>
+        <p>A penas tienes opciones</p>
+    </div>
+
+</div>
+
+<hr class="my-4">

@@ -1,0 +1,29 @@
+<div class="container">
+  <h1 class="text-center mb-4">Home</h1>
+
+  <select class="form-select mb-3" aria-label="Default select example" [(ngModel)]="ejercicioSelecionado">
+    <option value="" selected disabled>Open this select menu</option>
+    <option value="1">Ejercicio 1</option>
+    <option value="2">Ejercicio 2</option>
+    <option value="3">Ejercicio 3</option>
+    <option value="4">Ejercicio 4</option>
+    <option value="5">Ejercicio 5</option>
+    <option value="6">Ejercicio 6</option>
+    <option value="7">Ejercicio 7</option>
+    <option value="8">Ejercicio 8</option>
+    <option value="9">Ejercicio 9</option>
+  </select>
+
+  <div [ngSwitch]="ejercicioSelecionado">
+    <app-ejercicio1 *ngSwitchCase="'1'"></app-ejercicio1>
+    <app-ejercicio2 *ngSwitchCase="'2'"></app-ejercicio2>
+    <app-ejercicio3 *ngSwitchCase="'3'"></app-ejercicio3>
+    <app-ejercicio4 *ngSwitchCase="'4'"></app-ejercicio4>
+    <app-ejercicio5 *ngSwitchCase="'5'"></app-ejercicio5>
+    <app-ejercicio6 *ngSwitchCase="'6'"></app-ejercicio6>
+    <app-ejercicio7 *ngSwitchCase="'7'"></app-ejercicio7>
+    <app-ejercicio8 *ngSwitchCase="'8'"></app-ejercicio8>
+    <app-ejercicio9 *ngSwitchCase="'9'"></app-ejercicio9>
+    <p *ngSwitchDefault>Selecciona un ejercicio</p>
+  </div>
+</div>

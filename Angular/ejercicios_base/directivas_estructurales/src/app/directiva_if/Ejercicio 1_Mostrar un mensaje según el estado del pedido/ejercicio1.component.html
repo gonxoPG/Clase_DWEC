@@ -1,0 +1,16 @@
+<div class="container">
+
+    <h3 class="mb-3">Ejercicio 1</h3>
+    <div class="form-check mt-0">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" [(ngModel)]="mostrarMensaje">
+        <label class="form-check-label" for="flexCheckDefault">
+            Mostrar mensaje
+        </label>
+    </div>
+
+    @if (mostrarMensaje) {
+        <h5 class="my-4">Mensaje que se muestra o se oculta</h5>
+    }
+</div>
+
+<hr class="my-4">

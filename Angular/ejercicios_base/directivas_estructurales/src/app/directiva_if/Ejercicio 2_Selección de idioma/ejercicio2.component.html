@@ -1,0 +1,25 @@
+<div class="container">
+    <h3 class="mb-3">Ejercicio 2</h3>
+
+    <form #miFormulario="ngForm" (ngSubmit)="formularioEnviado = true">
+        <h5>Indica tu edad</h5>
+
+        <div class="mb-3">
+            <label for="inputAge" class="form-label">Edad:</label>
+            <input type="number" class="form-control" id="inputAge" name="edad" [(ngModel)]="edad">
+        </div>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+
+    </form>
+
+    @if (formularioEnviado) {
+    <div class="mt-3">
+        <!-- TO DO necesito una función para evaluar la edad y que me retorne el mensaje que va aquí -->
+        <p [ngStyle] = "{'color': getColor()}">{{evaluarEdad(edad)}}</p>
+        
+    </div>
+    }
+
+</div>
+
+<hr class="my-4">

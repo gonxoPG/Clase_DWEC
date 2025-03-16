@@ -1,0 +1,24 @@
+<div class="container my-3">
+    <h3 class="mb-3">Ejercicio 6</h3>
+
+    <select class="form-select mb-3" [(ngModel)]="tipoArchivo">
+        <option value="" disabled selected>Selecciona un formato:</option>
+        <option value="1">PDF</option>
+        <option value="2">DOC</option>
+        <option value="3">IMG</option>
+    </select>
+
+    @switch (tipoArchivo) {
+        @case ("1") {
+            <img class="w-25 h-auto" [src]="iconoPDF">
+        } @case ("2") {
+            <img class="w-25 h-auto" [src]="iconoDOC"> 
+        } @case ("3") {
+            <img class="w-25 h-auto" [src]="iconoIMG">
+        } @default {
+            <p class="text-danger">Selecciona un formato</p>
+        }
+    }
+</div>
+
+<hr class="my-4">

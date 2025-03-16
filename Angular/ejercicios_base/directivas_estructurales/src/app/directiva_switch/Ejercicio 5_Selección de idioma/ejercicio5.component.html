@@ -1,0 +1,28 @@
+<div class="container">
+    <h3 class="mb-3">Ejercicio 5</h3>
+
+    <select class="form-select mb-3" [(ngModel)]="idioma">
+        <option value="" disabled selected>Selecciona un idioma</option>
+        <option value="es">Español</option>
+        <option value="en">Inglés</option>
+        <option value="fr">Francés</option>
+    </select>
+
+    @switch (idioma) {
+        @case ("es") {
+            <h4>Idioma seleccionado: Español</h4>
+            <p>¡Hola! ¿Cómo estás?</p>
+        }@case ("en") {
+            <h4>Idioma seleccionado: Inglés</h4>
+            <p>Hello! How are you?</p>
+        }@case ("fr") {
+            <h4>Idioma seleccionado: Francés</h4>
+            <p>Bonjour! Comment ça va?</p>
+        }@default {
+            <h4>Selecciona un idioma</h4>
+            <p>Selecciona un idioma para ver más información</p>
+        }
+    }
+</div>
+
+<hr class="my-4">

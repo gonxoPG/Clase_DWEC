@@ -1,0 +1,22 @@
+<div class="container">
+    <h3 class="mb-3">Ejercicio 8</h3>
+
+    <ul class="list-group my-3">
+        @for (item of nombres; track $index) {
+            <li class="list-group-item" [ngClass]="{'bg-warning text-dark': $index % 2 == 0}">{{$index+1}}. {{item}}</li>
+        }
+        
+        
+      </ul>
+
+    <!-- <ul class="list-group">
+        <li 
+            *ngFor="let nombre of nombres; let i = index" 
+            class="list-group-item"
+            [ngClass]="{'bg-warning text-dark': i % 2 === 0}"
+        >
+            {{ i + 1 }}. {{ nombre }}
+        </li> -->
+</div>
+
+<hr class="my-4">

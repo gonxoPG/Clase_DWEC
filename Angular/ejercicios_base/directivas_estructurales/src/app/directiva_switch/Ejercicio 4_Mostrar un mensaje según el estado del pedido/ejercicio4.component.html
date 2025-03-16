@@ -1,0 +1,28 @@
+<div class="container">
+    <h3 class="mb-3">Ejercicio 4</h3>
+    
+    <select class="form-select mb-3" [(ngModel)]="estadoPedido">
+        <option value="" disabled selected>Estado del pedido</option>
+        <option value="1">Pendiente</option>
+        <option value="2">Enviado</option>
+        <option value="3">Entregado</option>
+    </select>
+
+    @switch (estadoPedido) {
+        @case ("1") {
+            <h4>Pedido pendiente</h4>
+            <p>Estamos preparando tu pedido</p>
+        }@case ("2") {
+            <h4>Pedido enviado</h4>
+            <p>Tu pedido ha sido enviado</p>
+        }@case ("3") {
+            <h4>Pedido entregado</h4>
+            <p>Gracias por tu compra</p>
+        }@default {
+            <h4>Estado del pedido</h4>
+            <p>Selecciona un estado para ver más información</p>
+        }
+    }
+</div>
+
+<hr class="my-4">

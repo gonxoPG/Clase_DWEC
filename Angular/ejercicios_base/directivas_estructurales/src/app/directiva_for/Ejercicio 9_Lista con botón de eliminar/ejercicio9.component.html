@@ -1,0 +1,15 @@
+<div class="container my-3">
+    <h3 class="mb-3">Ejercicio 9</h3>
+
+    <ul class="list-group my-3">
+
+        @for (item of tareas; track $index) {
+            <li class="list-group-item" (click)="seleccionarTarea($index)" [class.active]="tareaSeleccionada == $index" style="cursor: pointer;">{{item}}</li>
+        }
+    
+    </ul>
+
+    <button type="button" class="btn btn-danger" (click)="eliminarTarea()" [disabled]="tareaSeleccionada == -1">Eliminar</button>
+</div>
+
+<hr class="my-4">
