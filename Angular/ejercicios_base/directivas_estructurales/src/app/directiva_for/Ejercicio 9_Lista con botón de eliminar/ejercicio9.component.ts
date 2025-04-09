@@ -15,12 +15,15 @@ export class Ejercicio9Component {
 
   }
 
-  eliminarTarea() {
+  eliminarTarea( /* _t4: producto */ ) {
     if (this.tareaSeleccionada != -1) {
 
       this.tareas.splice(this.tareaSeleccionada, 1);
       this.tareaSeleccionada = -1;
       
     }
+
+    /* sugerencia Borja */
+      //this.productos = this.productos.filter((producto) => producto !== _t4)
   }
 }
