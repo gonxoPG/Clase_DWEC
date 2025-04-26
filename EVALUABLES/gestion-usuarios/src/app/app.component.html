@@ -1,17 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- barra de navegación -->
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" [routerLink]="['/home']">Home</a> <!-- eliminamos el href porque no queremos que refresque -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>App Gestión de Usuarios</title>
-</head>
+        <a class="nav-link" [routerLink]="['/create-user']">Crear</a> <!-- generar active cuando esté seleccionado -->
+        <a class="nav-link" [routerLink]="['/users']">Listar</a>
+        <a class="nav-link" [routerLink]="['/user-filter']">Filtrar</a>
+      </div>
+    </div>
+  </div>
+</nav>
 
-<body>
-  <!-- barra de navegación -->
-
-  <!-- navegación a otros componentes -->
-    <router-outlet></router-outlet>
-</body>
-
-</html>
+<!-- navegación a otros componentes -->
+<div class="container mt-4">
+  <router-outlet></router-outlet>
+</div>

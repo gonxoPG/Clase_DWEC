@@ -1,0 +1,30 @@
+<h3>Selecciona por qué dominio del email quieres filtrar:</h3>
+
+<select class="form-select my-3" style="width: 18rem;" [(ngModel)] = "seleccionEmail">
+    <option value=".biz" selected>.biz</option>
+    <option value=".org">.org</option>
+    <option value=".tv">.tv</option>
+    <option value=".net">.net</option>
+    <option value=".ca">.ca</option>
+    <option value=".info">.info</option>
+    <option value=".io">.io</option>
+    <option value=".es">.es</option>
+    <option value=".com">.com</option>
+</select>
+
+<button class="btn btn-primary" (click)="realizarFiltro()">Filtrar</button>
+
+<div class="row row-cols-1 row-cols-md-3 g-4 mt-3">
+    <div class="col" *ngFor="let user of users">
+        <div class="card">
+            <div class="card-body" style="font-size: 1.2rem;">
+                <p class="card-tittle"><strong>Nombre:</strong> {{user?.name}}</p>
+                <p class="card-text"><strong>ID:</strong> {{user?.id}}</p>
+                <p class="card-text"><strong>Nombre de usuario:</strong> {{user?.username}}</p>
+                <p class="card-text"><strong>Correo electrónico:</strong> {{user?.email}}</p>
+                <p class="card-text"><strong>Teléfono:</strong> {{user?.phone}}</p>
+                <p class="card-text"><strong>Sitio web:</strong> {{user?.website}}</p>
+            </div>
+        </div>
+    </div>
+</div>

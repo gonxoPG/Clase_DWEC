@@ -5,24 +5,28 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserListComponent } from './components/user-list/user-list.component';
 import { UserDetailComponent } from './components/user-detail/user-detail.component';
-import { UserEditComponent } from './components/user-edit/user-edit.component';
 import { UserCreateComponent } from './components/user-create/user-create.component';
-import { UserStatsComponent } from './components/user-stats/user-stats.component';
 import { ErrorComponent } from './components/error/error.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { UserFilterComponent } from './components/user-filter/user-filter.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserListComponent,
     UserDetailComponent,
-    UserEditComponent,
     UserCreateComponent,
-    UserStatsComponent,
-    ErrorComponent
+    ErrorComponent,
+    UserFilterComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
     provideClientHydration(withEventReplay())

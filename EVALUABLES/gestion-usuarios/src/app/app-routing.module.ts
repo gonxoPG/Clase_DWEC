@@ -3,17 +3,18 @@ import { RouterModule, Routes } from '@angular/router';
 import { UserListComponent } from './components/user-list/user-list.component';
 import { UserDetailComponent } from './components/user-detail/user-detail.component';
 import { UserCreateComponent } from './components/user-create/user-create.component';
-import { UserStatsComponent } from './components/user-stats/user-stats.component';
+import { UserFilterComponent } from './components/user-filter/user-filter.component';
 import { ErrorComponent } from './components/error/error.component';
+import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
 
-  {path: '', redirectTo: '/users', pathMatch: 'full'},
+  {path: '', redirectTo: '/home', pathMatch: 'full'},
+  {path: 'home', component: HomeComponent},
   {path: 'users', component: UserListComponent},
   {path: 'users/:id', component: UserDetailComponent},
-  {path: 'edit-user/:id', component: UserDetailComponent},
   {path: 'create-user', component: UserCreateComponent},
-  {path: 'user-stats', component: UserStatsComponent},
+  {path: 'user-filter', component: UserFilterComponent},
   {path: '**', component: ErrorComponent}
   
 ];
