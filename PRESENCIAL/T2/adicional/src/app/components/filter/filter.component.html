@@ -1,0 +1,15 @@
+<select class="form-select mt-3" [(ngModel)] = "seleccionTag">
+    <option>Life</option>
+    <option>History</option>
+    <option>American</option>
+    <option>Crime</option>
+    <option>Fiction</option>
+    <option>French</option>
+</select>
+<button class="btn btn-primary mt-3" (click)="realizarFiltro()">Filtrar</button>
+
+<div class="row row-cols-1 row-cols-md-2 g-4 mt-3">
+    <div class="col" *ngFor="let item of posts">
+        <app-post [post]="item"></app-post>
+    </div>
+  </div>

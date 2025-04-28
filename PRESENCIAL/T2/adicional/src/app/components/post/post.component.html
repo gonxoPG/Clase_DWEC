@@ -1,0 +1,13 @@
+<div class="card">
+    <img [src]="post?.tags |imagenes" class="card-img-top">
+                <!-- [src]="item!!.tags |imagenes" -->
+    <div class="card-body">
+        <h5 class="card-title">{{post?.title |uppercase}}</h5> <!-- esto es un pipe -->
+        <p class="card-text">Las temáticas de este post son:</p>
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let tag of post?.tags">{{tag}}</li>
+        </ul>
+        <button class="btn btn-primary mt-4" [routerLink]="['/detail', post?.id]">Ver detalle</button>  
+                                            <!-- [routerLink]="['/detail', item?.id]  retardar el parámetro para asegurar que no es undefined-->
+    </div>
+</div>
